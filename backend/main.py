@@ -24,8 +24,5 @@ def upload_file(file: UploadFile = File(...)):
     writer.save()
 
     file.file.close()
-    headers = {
-        'Content-Disposition': 'attachment; filename="' + path + '"'
-    }
 
     return FileResponse(path, headers=headers, media_type='application/octet-stream', filename=file.filename)

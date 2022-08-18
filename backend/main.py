@@ -25,4 +25,6 @@ def upload_file(file: UploadFile = File(...)):
 
     file.file.close()
 
-    return FileResponse(path, headers=headers, media_type='application/octet-stream', filename=file.filename)
+    if os.path.isfile(path):
+        return FileResponse(path=path, filename=file.filename)
+    return None

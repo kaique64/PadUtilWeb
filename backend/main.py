@@ -11,7 +11,7 @@ app = FastAPI()
 inventoryServiceXLS = InventoryServiceXLS()
 inventoryControllerXLS = InventoryController(inventoryServiceXLS)
 
-@app.post('/files/xls/upload')
+@app.post('/files/xls/upload', response_class=FileResponse)
 def upload_file(file: UploadFile = File(...)):
     content = file.file.read()
     data = BytesIO(content)

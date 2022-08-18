@@ -17,7 +17,7 @@ def upload_file(file: UploadFile = File(...)):
     data = BytesIO(content)
     result = inventoryControllerXLS.read(data, "TAG")
 
-    path = 'results/' + str(uuid.uuid4()) + file.filename + '_RESULT.xlsx'
+    path = 'uploads/' + str(uuid.uuid4()) + file.filename + '_RESULT.xlsx'
     writer = pd.ExcelWriter(path, engine='xlsxwriter')
     result.to_excel(writer, sheet_name='Example', index=False)
 

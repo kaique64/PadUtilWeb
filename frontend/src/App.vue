@@ -59,7 +59,6 @@ export default {
       this.currentStatus = STATUS_SAVING;
 
       upload(formData)
-        .then(wait(1500))
         .then(result => {
           this.currentStatus = STATUS_SUCCESS;
           this.blob = result.data;

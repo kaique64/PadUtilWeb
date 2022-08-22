@@ -14,6 +14,7 @@ export default {
   },
   data() {
     return {
+      tag: '',
       filename: 'Clique e selecione o arquivo (.xls)',
       currentStatus: null,
       empty: true,

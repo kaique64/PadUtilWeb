@@ -38,6 +38,9 @@ export default {
     }
   },
   methods: {
+    setTag(tag) {
+      this.tag = tag;
+    },
     setFilename(filename) {
       this.filename = filename;
     },

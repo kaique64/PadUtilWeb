@@ -60,7 +60,7 @@ export default {
           formData.append('file', fileList[item], fileList[item].name);
         });
 
-      this.save(formData)
+      this.save(formData, this.tag);
     },
     onChangeInput(event) {
       const tag = event.target.value;

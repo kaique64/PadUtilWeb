@@ -1,10 +1,11 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from io import BytesIO
 import pandas as pd
 import uuid
 import os
+from utils.convert_bytes_io import convert_to_bytes_io
+from utils.create_and_save_xls_file import create_and_save_xls_file
 from modules.inventory.services.inventory_service_xls import InventoryServiceXLS
 from modules.inventory.controllers.inventory_controller import InventoryController
 
@@ -25,15 +26,12 @@ inventoryControllerXLS = InventoryController(inventoryServiceXLS)
 @app.post('/files/xls/upload', response_class=FileResponse)
 def upload_file(file: UploadFile = File(...), tag: str = ''):
     content = file.file.read()
-    data = BytesIO(content)
+    data = convert_to_bytes_io(content)
     result = inventoryControllerXLS.read(data, tag)
 
-    filename = str(uuid.uuid4()) + file.filename + '_RESULT.xlsx'
-    path = 'uploads/' + filename
-    writer = pd.ExcelWriter(path, engine='xlsxwriter')
-    result.to_excel(writer, sheet_name='Example', index=False)
-
-    writer.save()
+    XLSPathFile = create_and_save_xls_file(file, result)
+    path = XLSPathFile['path']
+    filename = XLSPathFile['filename']
 
     file.file.close()
 

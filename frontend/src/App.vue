@@ -32,6 +32,9 @@ export default {
     },
     isFailed() {
       return this.currentStatus === STATUS_FAILED;
+    },
+    isEmpty() {
+      return this.empty === EMPTY;
     }
   },
   methods: {

@@ -16,6 +16,7 @@ export default {
     return {
       filename: 'Clique e selecione o arquivo (.xls)',
       currentStatus: null,
+      empty: true,
       blob: null,
     }
   },

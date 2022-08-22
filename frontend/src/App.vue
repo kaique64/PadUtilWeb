@@ -111,7 +111,8 @@ export default {
         :accept="`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel`" 
         :class="isEmpty ? `board-inventory-btn disabled` : `board-inventory-btn`"
         :name="`inventory`"
-        :id="`board-inventory`"  
+        :id="`board-inventory`"
+        :disabled="isEmpty"
       />
       
       <img src="/assets/success-icon.svg" class="status-icon" alt="Upload feito com sucesso" v-if="isSuccess">

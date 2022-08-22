@@ -231,4 +231,12 @@ input[type="file"] {
   width: 100%;
   text-align: left;
 }
+
+.tag {
+  border: 2px solid var(--vt-c-divider-dark-1);
+  border-radius: 5px;
+  padding: 8px;
+  max-width: 325px;
+  width: 100%;
+}
 </style>

@@ -76,7 +76,7 @@ export default {
     save(formData, query) { 
       this.currentStatus = STATUS_SAVING;
 
-      upload(formData)
+      upload(formData, query)
         .then(result => {
           this.currentStatus = STATUS_SUCCESS;
           this.blob = result.data;

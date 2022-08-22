@@ -62,7 +62,18 @@ export default {
 
       this.save(formData)
     },
-    save(formData) { 
+    onChangeInput(event) {
+      const tag = event.target.value;
+      
+      this.setTag(tag);
+
+      if (tag !== '' || tag !== null) {
+        this.empty = false;
+      } else {
+        this.empty = true;
+      }
+    },
+    save(formData, query) { 
       this.currentStatus = STATUS_SAVING;
 
       upload(formData)

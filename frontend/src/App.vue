@@ -183,6 +183,12 @@ input[type="file"] {
   font-weight: 600;
 }
 
+.disabled {
+  background-color: var(--vt-c-divider-dark-1);
+  color: var(--vt-c-white);
+  cursor: not-allowed;
+}
+
 .result-btn {
   border: none;
 }

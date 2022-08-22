@@ -6,6 +6,7 @@ export default {
         class: String,
         name: String,
         id: String,
+        disabled: Boolean,
         changeMethod: Function
     }
 }
@@ -22,5 +23,6 @@ export default {
         :id="id" 
         :accept="accept"
         @change="changeMethod"
+        :disabled="disabled"
     >
 </template>

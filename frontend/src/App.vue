@@ -1,7 +1,6 @@
 <script>
 import { upload } from './service/fileUploadService'
 import { download } from './service/downloadFileService'
-import { wait } from './utils/wait'
 import FileComponentVue from './components/FileComponent.vue';
 import DownloadButtonComponentVue from './components/DownloadButtonComponent.vue';
 

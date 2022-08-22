@@ -109,7 +109,7 @@ export default {
         :filename="filename" 
         :changeMethod="onChangeFile" 
         :accept="`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel`" 
-        :class="`board-inventory-btn`"
+        :class="isEmpty ? `board-inventory-btn disabled` : `board-inventory-btn`"
         :name="`inventory`"
         :id="`board-inventory`"  
       />

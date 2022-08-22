@@ -1,6 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from io import BytesIO
 import pandas as pd
 import uuid
@@ -23,10 +24,10 @@ inventoryServiceXLS = InventoryServiceXLS()
 inventoryControllerXLS = InventoryController(inventoryServiceXLS)
 
 @app.post('/files/xls/upload', response_class=FileResponse)
-def upload_file(file: UploadFile = File(...)):
+def upload_file(file: UploadFile = File(...), tag: str = ''):
     content = file.file.read()
     data = BytesIO(content)
-    result = inventoryControllerXLS.read(data, "TAG")
+    result = inventoryControllerXLS.read(data, tag)
 
     filename = str(uuid.uuid4()) + file.filename + '_RESULT.xlsx'
     path = 'uploads/' + filename

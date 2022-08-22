@@ -5,7 +5,7 @@ import { wait } from './utils/wait'
 import FileComponentVue from './components/FileComponent.vue';
 import DownloadButtonComponentVue from './components/DownloadButtonComponent.vue';
 
-const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3;
+const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3, EMPTY=true;
 
 export default {
   components: {

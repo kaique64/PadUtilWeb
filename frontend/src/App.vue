@@ -103,6 +103,7 @@ export default {
     <span class="text">
       Seja bem-vindo ao PadUtil para leitura do inventário de placas 
     </span>
+    <input type="text" class="tag" id="tag" placeholder="Digite a tag" @change="onChangeInput">
     <div class="inventory-container">
       <FileComponentVue  
         :filename="filename" 

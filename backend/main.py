@@ -1,8 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-import pandas as pd
-import uuid
 import os
 from utils.convert_bytes_io import convert_to_bytes_io
 from utils.create_and_save_xls_file import create_and_save_xls_file
